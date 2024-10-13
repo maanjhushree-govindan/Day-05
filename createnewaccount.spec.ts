@@ -21,8 +21,13 @@ test(`Create Salesforce account`, async ({page}) => {
     await page.locator("(//input[@class='slds-input'])[2]").fill("Test Account");
     await page.locator("//button[@class='slds-button slds-button_brand']").click();
     await page.waitForTimeout(2000);   
+    type toast = [];
+    type toast1 = [];
+
+    
     const toast = await page.locator("//div[@class='toastContent slds-notify__content']").textContent();
-        console.log(toast);
+    const toast1 = toast?.split(".");  
+    console.log(toast1)
 
     
 });
